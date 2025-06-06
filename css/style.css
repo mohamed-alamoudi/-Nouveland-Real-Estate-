@@ -1,0 +1,1272 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "IBM Plex Sans Arabic";
+    height: 200vh;
+    direction: rtl;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #FFF;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.30);
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+
+nav .logo {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    font-size: 24px;
+    color: #000;
+}
+
+nav li {
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+    font-size: 20px;
+
+    a {
+        color: #000;
+    }
+}
+
+nav li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    right: 0;
+    transition: 0.3s;
+    background-color: #95B5CC;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+nav button {
+    padding: 10px 73px;
+    border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    border: 2px solid #000;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+.navbar_btn {
+    display: none;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.navbar_btn ul {
+    position: absolute;
+    left: 999px;
+    top: 100px;
+    width: 100%;
+    height: 85vh;
+    transition: 0.3s;
+    background-color: #101010e3;
+}
+
+.navbar_btn ul li {
+    display: block;
+    margin: 0;
+    text-align: start;
+    padding: 20px 20px;
+
+    a {
+        color: #fff;
+    }
+}
+
+.navbar_btn ul li:last-child {
+    text-align: center;
+}
+
+.navbar_btn ul.active {
+    left: 0;
+}
+
+/*  home */
+.home {
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+}
+
+.home .container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: url("../image/home.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.home .container .content {
+    width: 85%;
+    margin: auto;
+}
+
+.home .container .content h1 {
+    width: 55%;
+    font-size: 75px;
+    margin-bottom: 14px;
+}
+
+.home .container .content .doc {
+    width: 55%;
+    margin-bottom: 39px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.home .container .content .options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    background-color: #fff;
+    border-radius: 18px;
+    height: 90px;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.home .container .content .options .research-btn {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 22px;
+    cursor: pointer;
+    padding-right: 5px;
+    transition: 0.3s;
+}
+
+.home .container .content .options .research-btn:hover {
+    transform: translateX(-15px);
+}
+
+.home .container .content .options>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.home .container .content .options .icon {
+    background-color: rgba(149, 181, 204, 0.29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+.home .container .content .options h3 {
+    color: #000;
+    font-size: 18px;
+}
+
+select {
+    color: #8A8A8A;
+    font-size: 19px;
+}
+
+select:focus-visible {
+    border: none;
+    outline: none;
+}
+
+/*  statistics */
+.statistics {
+    background-color: #000;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.statistics>div {
+    h3 {
+        color: #FFF;
+        font-size: 30px;
+        margin-bottom: -5px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.61);
+    }
+}
+
+/*  about */
+.about {
+    padding: 80px 0;
+}
+
+.about .container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.about .container .card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about .container .card .box {
+    width: 30%;
+    transition: 0.3s;
+}
+
+.about .container .card .box:hover {
+    transform: translateY(-30px);
+}
+
+.about .container .card_top h2 {
+    width: 40%;
+    font-size: 50px;
+    color: #000;
+}
+
+.about .container .card_top p {
+    width: 35%;
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.about .container .card_tow .box .icon {
+    background-color: rgba(149, 181, 204, 0.29);
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .container .card_tow .box h2 {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+.about .container .card_tow .box p {
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.about .container .card_center h2 {
+    width: 35%;
+    font-size: 50px;
+    color: #000;
+}
+
+.about .container .card_center .team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.about .container .card_center .team:hover {
+    transform: translateX(-30px);
+}
+
+.about .container .card_center .team .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -5px;
+}
+
+.about .container .card_center .team .image img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.about .container .card_center .team .image #team1 {
+    margin: 0 -10px;
+}
+
+.about .container .card_center .team .text h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #000;
+    font-size: 26px;
+}
+
+.about .container .card_center .team .text p {
+    color: rgba(138, 138, 138, 1);
+    font-size: 26px;
+}
+
+.about .container .card_bottom .image {
+    /* width: 280px;
+    height: 260px; */
+    border-radius: 40px;
+    margin: auto;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.11);
+}
+
+.about .container .card_bottom h2 {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.about .container .card_bottom p {
+    font-size: 26px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+/*  research */
+.research {
+    width: 100%;
+    padding: 80px 0;
+    background-color: rgba(149, 181, 204, 0.29);
+}
+
+.research .container {
+    width: 85%;
+    margin: auto;
+}
+
+.research .container .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.research .container .top h1 {
+    width: 40%;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 50px;
+}
+
+.research .container .top p {
+    width: 30%;
+    color: rgba(0, 0, 0, 0.53);
+    font-size: 26px;
+}
+
+.research .container .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.research .container .card .box {
+    width: 330px;
+    height: 315px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.research .container .card .box:hover {
+    transform: translateY(-20px);
+}
+
+.research .container .card .box .image {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    border-radius: 30px;
+}
+
+.research .container .card .box .image .icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    svg path {
+        transition: 0.3s;
+    }
+}
+
+.research .container .card .box .image .icon:hover {
+    transform: scale(0.95);
+
+    svg path {
+        stroke: red;
+    }
+}
+
+.research .container .card .box .text {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.research .container .card .box .text p {
+    padding: 5px 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.53);
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.51);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.research .container .card .box .text p:hover {
+    transform: translateX(-10px);
+}
+
+.research .container .card .box .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.research .container .card .box .price h3 {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 24px;
+}
+
+.research .container .card .box .price .star {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+    flex-direction: row-reverse;
+}
+
+.research .container .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+.research .container .btns button {
+    background-color: rgba(255, 255, 255, 1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.research .container .btns button:hover {
+    transform: scale(0.9);
+}
+
+/*  blog */
+.blog {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.blog .container {
+    width: 85%;
+    margin: auto;
+}
+
+.blog .container .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog .container .top .text h2 {
+    font-size: 80px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.blog .container .top .text p {
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.53);
+    width: 80%;
+}
+
+.blog .container .top .btn {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+.blog .container .top .btn:hover {
+    transform: translateX(-30px);
+}
+
+.blog .container .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.blog .container .content .right {
+    width: 55%;
+}
+
+.blog .container .content .right .image {
+    width: 570px;
+    height: 380px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blog .container .content .right .image:hover {
+    transform: scale(0.95);
+}
+
+.blog .container .content .right .text {
+    width: 70%;
+    cursor: pointer;
+}
+
+.blog .container .content .right .text h2 {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 30px;
+}
+
+.blog .container .content .right .text p {
+    color: rgba(0, 0, 0, 0.53);
+    font-size: 26px;
+}
+
+.blog .container .content .right .features {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+    width: 70%;
+}
+
+.blog .container .content .right .features p {
+    padding: 7px 25px;
+    background-color: rgba(149, 181, 204, 0.29);
+    color: rgba(102, 172, 221, 1);
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blog .container .content .right .features p:hover {
+    transform: translateY(-15px);
+}
+
+.blog .container .content .ads {
+    width: 45%;
+}
+
+.blog .container .content .ads .card {
+    margin-bottom: 31px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blog .container .content .ads .card:hover {
+    transform: translateX(-15px);
+}
+
+.blog .container .content .ads .card .image {
+    width: 250px;
+    height: 170px;
+    margin-bottom: 20px;
+}
+
+.blog .container .content .ads .card h2 {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.blog .container .content .ads .card p {
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+/* section reservation */
+.reservation {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.reservation .container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation .container .text {
+    width: 45%;
+}
+
+.reservation .container .text h1 {
+    position: relative;
+    font-size: 50px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.reservation .container .text h1::after {
+    content: '';
+    position: absolute;
+    width: 780px;
+    height: 3px;
+    left: -122%;
+    border-radius: 50px;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.reservation .container .text p {
+    margin-bottom: 40px;
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.reservation .container .text .btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reservation .container .text .btn::after {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 3px;
+    left: -19%;
+    border-radius: 50px;
+    bottom: -80%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.reservation .container .text .btn button {
+    position: relative;
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    transition: 0.3s;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+}
+
+.reservation .container .text .btn button:first-child {
+    width: 150px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.reservation .container .text .btn button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.9);
+
+    svg path {
+        stroke: #000;
+    }
+
+}
+
+.reservation .container .text .btn button:first-child:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 1);
+}
+
+.reservation .container .image {
+    width: 450px;
+    height: 300px;
+    margin-top: 100px;
+}
+
+/* footer */
+footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+footer .container {
+    width: 85%;
+    margin: auto;
+}
+
+footer .container .logo {
+    margin: auto;
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 1);
+}
+
+footer .container .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+footer .container .content ul {
+    width: 35%;
+}
+
+footer .container .content ul li {
+    width: fit-content;
+    margin-bottom: 13px;
+    transition: 0.3s;
+
+    a {
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+footer .container .content ul li:not(:first-child):hover {
+    transform: translateX(-8px);
+}
+
+footer .container .content ul li:first-child {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+}
+
+footer .container .content .email {
+    width: 30%;
+}
+
+footer .container .content .email h4 {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
+}
+
+footer .container .content .email p {
+    font-size: 21px;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 30px;
+}
+
+footer .container .content .email form {
+    width: 400px;
+    height: 65px;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+footer .container .content .email form input {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    padding: 16px 26px;
+}
+
+footer .container .content .email form button {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    z-index: 5;
+    font-size: 20px;
+    padding: 14px 35px;
+    left: 5px;
+    top: 5px;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    transition: 0.3s;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+}
+
+footer .container .content .email form button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+footer .container .copyright {
+    padding-top: 20px;
+    margin-top: 50px;
+    border-top: 2px solid rgba(255, 255, 255, 1);
+
+    p {
+        font-size: 20px;
+        color: rgba(196, 196, 196, 1);
+        margin: auto;
+        width: fit-content;
+    }
+
+}
+
+
+
+
+
+/* resbons */
+@media (max-width: 1024px) {
+    .home .container .content h1 {
+        width: 60%;
+    }
+
+    .about .container .card {
+        flex-wrap: wrap;
+        gap: 40px;
+        text-align: center;
+
+        .box {
+            width: 45%;
+
+            .icon {
+                margin: auto;
+            }
+        }
+    }
+
+    .about .container .card .box:last-child {
+        margin: auto;
+    }
+
+    .research .container .card {
+        flex-wrap: wrap;
+        gap: 50px;
+
+        .box {
+            width: 40%;
+        }
+
+    }
+
+    .research .container .card .box:last-child {
+        margin: auto;
+    }
+
+    .research .container .btns {
+        justify-content: center;
+    }
+
+    .blog .container .content {
+        flex-wrap: wrap;
+    }
+
+    .blog .container .content .right {
+        width: 100%;
+
+        .image {
+            width: 100%;
+            height: 450px;
+        }
+    }
+
+    .blog .container .content .right .features {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .blog .container .content .right .text {
+        width: 100%;
+    }
+
+    .blog .container .content .ads {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .card {
+            width: 45%;
+            text-align: center;
+
+            .image {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    }
+
+    .reservation .container .text .btn::after,
+    .reservation .container .text h1::after {
+        display: none;
+    }
+
+    footer .container .content {
+        flex-wrap: wrap;
+    }
+
+    footer .container .content ul {
+        width: 50%;
+    }
+
+    footer .container .content .email {
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header nav .btn,
+    header nav .links {
+        display: none;
+    }
+
+    .navbar_btn {
+        display: block;
+    }
+
+    .home .container .content h1 {
+        font-size: 55px;
+        margin: 0;
+    }
+
+    .home .container .content .doc {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .about .container .card_top h2 {
+        width: 45%;
+        font-size: 40px;
+    }
+
+    .about .container .card_top p {
+        width: 45%;
+        font-size: 24px;
+    }
+
+    .blog .container .content .right .features {
+        gap: 8px;
+    }
+
+    .reservation .container {
+        flex-wrap: wrap-reverse;
+
+        .text {
+            width: 100%;
+        }
+
+        .image {
+            width: 100%;
+            height: 400px;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    footer .container .content ul {
+        text-align: center;
+    }
+
+    footer .container .content .email {
+        width: fit-content;
+        margin: auto;
+        margin-top: 40px;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 430px) {
+    * {
+        text-align: center;
+    }
+
+    .home .container .content .options .icon {
+        margin: 0;
+    }
+
+    .home .container .content {
+        margin: auto auto 50px auto;
+    }
+
+    .home .container .content h1 {
+        width: 100%;
+    }
+
+    .home .container .content .doc {
+        width: 100%;
+    }
+
+    .home .container .content .options .research-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .home .container .content .options {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 70px;
+        padding: 5px 15px;
+    }
+
+    .home .container .content .options>div {
+        div {
+            display: none;
+        }
+    }
+
+    .about .container .card {
+        width: 100%;
+
+        .box {
+            width: 100%;
+        }
+    }
+
+    .about .container .card_top {
+        h2 {
+            width: 100%;
+        }
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .about .container .card_center {
+        h2 {
+            width: 100%;
+        }
+
+        .team {
+            width: 100%;
+        }
+    }
+
+    .research .container .top {
+        flex-wrap: wrap;
+
+        h1 {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .statistics {
+        flex-wrap: wrap;
+        padding: 30px 0;
+        height: auto;
+        gap: 20px;
+
+        div {
+            width: 45%;
+            text-align: center;
+        }
+    }
+
+    .research .container .card .box {
+        width: 100%;
+    }
+
+    .blog .container .content .right .image {
+        height: 335px;
+    }
+
+    .blog .container .top {
+        flex-wrap: wrap;
+
+        .text {
+            width: 100%;
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .reservation .container .image {
+        height: 300px;
+    }
+
+
+    .blog .container .content .ads .card {
+        width: 100%;
+    }
+
+    footer .container .content ul {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    footer .container .content .email form {
+        width: 350px;
+    }
+
+    footer .container .content .email form input {
+        text-align: start;
+    }
+}
+
+
+@media (max-width: 380px) {
+    .home .container .content {
+        margin-bottom: 40px;
+    }
+
+    .home .container .content h1 {
+        font-size: 40px;
+    }
+
+    .home .container .content .doc {
+        margin-bottom: 20px;
+    }
+
+    footer .container .content .email form {
+        width: 300px;
+    }
+}
+
+@media (max-width: 330px) {
+    .about .container .card_center .team {
+        flex-wrap: wrap;
+    }
+
+    .about .container .card_bottom .image {
+        width: 100%;
+    }
+
+    .reservation .container .text .btn {
+        flex-wrap: wrap;
+
+        button {
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    footer .container .content .email form {
+        width: 280px;
+    }
+}
